@@ -1,0 +1,173 @@
+{
+	"info": {
+		"_postman_id": "7c824ced-e492-47f0-b95a-9d94d1090a8e",
+		"name": "Plazer",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "22018726"
+	},
+	"item": [
+		{
+			"name": "Member",
+			"item": [
+				{
+					"name": "Member Register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"userName\":\"johndoe@icloud.com\",\n    \"password\":\"johndoe123\",\n    \"address\":\"No33, Main Street, Nugegoda\",\n    \"DOB\":\"1998/07/02\",\n    \"skills\":\"Front end, Database\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/member/memberReg",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"member",
+								"memberReg"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Member Login",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"password\":\"johndoe1234\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/member/memberLogin?userName=johndoe@icloud.com",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"member",
+								"memberLogin"
+							],
+							"query": [
+								{
+									"key": "userName",
+									"value": "johndoe@icloud.com"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Otp",
+			"item": [
+				{
+					"name": "Email",
+					"item": [
+						{
+							"name": "Send OTP",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8000/otp/sendMailOtp?recipient=pramoddilshan470@gmail.com",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"otp",
+										"sendMailOtp"
+									],
+									"query": [
+										{
+											"key": "recipient",
+											"value": "pramoddilshan470@gmail.com"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Resend OTP",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8000/otp/resendMailOtp?otpId=8",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"otp",
+										"resendMailOtp"
+									],
+									"query": [
+										{
+											"key": "otpId",
+											"value": "8"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Verify OTP",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"otpId\":11,\n    \"otp\":\"9375\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8000/otp/verifyOtp",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"otp",
+										"verifyOtp"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		}
+	]
+}
